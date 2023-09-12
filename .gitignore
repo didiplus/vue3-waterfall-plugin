@@ -4,3 +4,4 @@ netlify-page
 dist
 dist-ssr
 *.local
+.vscode/*

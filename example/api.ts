@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Author: Yaowen Liu
  * @Date: 2021-10-14 13:34:56
- * @LastEditors: Yaowen Liu
- * @LastEditTime: 2023-04-10 12:42:14
+ * @LastEditors: didiplus 
+ * @LastEditTime: 2023-09-02 16:14:56
  */
 // import type { ViewCard } from '../lib/types/waterfall'
 
@@ -105,3 +105,47 @@ export const getList = ({ page = 1, pageSize = 20 }) => {
       })
     })
 }
+
+const toutiao="https://dficimage.toutiao.com/api/proxy/get"
+export const dficimage =({term="风景",page=1,size=30})=>{
+  /**
+   * 头条号免费图片来源
+   */
+  const url=`${toutiao}?from=${page}&size=${size}&term=${term}&user_id=68783357974&search_from=hotword_sug&platform=toutiaohao&path=%2Fmicro%2Fsearch`
+  return fetch(url)
+  .then(res=>console.log(res.json()))
+}
+
+
+export const toutiao_search_pic =({term="风景",page=0,size=30}) =>{
+  const url = "http://127.0.0.1:8000/picSearch"
+  return fetch(url,{
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      term: term,
+      page: page,
+      size: size
+    })      
+  })
+  .then(res => res.json())
+  .then((res) =>{
+    return res.map((item:any) =>{
+      console.log(item.img)
+      return {
+        id: item.id,
+        star: false,
+        price: 0,
+        src: {
+          original: item.img
+        },
+        backgroundColor: randomColor(),
+        name: item.title,        
+      }
+    })
+  })
+
+}
+

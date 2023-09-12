@@ -1,11 +1,15 @@
 <!--
  * @Author: Yaowen Liu
  * @Date: 2022-03-11 16:26:27
- * @LastEditors: Yaowen Liu
- * @LastEditTime: 2023-03-01 15:41:17
+ * @LastEditors: didiplus 
+ * @LastEditTime: 2023-09-02 17:59:03
 -->
 <template>
-  <WaterfallApp />
+  <div>
+
+    <WaterfallApp />
+  </div>
+  
 </template>
 
 <script setup lang="ts">
