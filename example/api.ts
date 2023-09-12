@@ -4,7 +4,7 @@
  * @Author: Yaowen Liu
  * @Date: 2021-10-14 13:34:56
  * @LastEditors: didiplus 
- * @LastEditTime: 2023-09-02 16:14:56
+ * @LastEditTime: 2023-09-12 16:03:04
  */
 // import type { ViewCard } from '../lib/types/waterfall'
 
@@ -118,7 +118,7 @@ export const dficimage =({term="风景",page=1,size=30})=>{
 
 
 export const toutiao_search_pic =({term="风景",page=0,size=30}) =>{
-  const url = "http://127.0.0.1:8000/picSearch"
+  const url = "http://107.173.155.239:8001/picSearch"
   return fetch(url,{
     method: "POST",
     headers: {

@@ -4,5 +4,5 @@ netlify-page
 dist
 dist-ssr
 *.local
-.vscode/*
+.vscode
 __pycache__

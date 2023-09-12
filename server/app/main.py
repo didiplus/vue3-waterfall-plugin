@@ -2,15 +2,15 @@
 Author: didiplus 
 Date: 2023-08-12 13:53:48
 LastEditors: didiplus 
-LastEditTime: 2023-09-12 14:51:50
-FilePath: \pic\api\main.py
+LastEditTime: 2023-09-12 16:12:03
+FilePath: \pic\vue3-waterfall-plugin\server\app\main.py
 Description: 
 Copyright (c) 2023 by didiplus, All Rights Reserved. 
 '''
 
 from  fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from toutiao import search_pic
+import toutiao
 from schemas import TuotiaoParams
 import uvicorn
 
@@ -27,7 +27,7 @@ app.add_middleware(
 
 @app.post("/image_toutaio")
 def iamge_toutiao(params:TuotiaoParams):
-    return {"code":1,"data":search_pic(params)}
+    return {"code":1,"data":toutiao.search_pic(params)}
 
 
 

@@ -17,7 +17,7 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt -i https://pypi.douban.com/simple/
  
 # 复制代码到工作目录
-COPY ./app /code/app
+COPY ./app /code
  
 # 放开端口
 EXPOSE 8001
