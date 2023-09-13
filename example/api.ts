@@ -4,7 +4,7 @@
  * @Author: Yaowen Liu
  * @Date: 2021-10-14 13:34:56
  * @LastEditors: didiplus 
- * @LastEditTime: 2023-09-12 16:03:04
+ * @LastEditTime: 2023-09-13 21:56:38
  */
 // import type { ViewCard } from '../lib/types/waterfall'
 
@@ -106,19 +106,12 @@ export const getList = ({ page = 1, pageSize = 20 }) => {
     })
 }
 
-const toutiao="https://dficimage.toutiao.com/api/proxy/get"
-export const dficimage =({term="风景",page=1,size=30})=>{
-  /**
-   * 头条号免费图片来源
-   */
-  const url=`${toutiao}?from=${page}&size=${size}&term=${term}&user_id=68783357974&search_from=hotword_sug&platform=toutiaohao&path=%2Fmicro%2Fsearch`
-  return fetch(url)
-  .then(res=>console.log(res.json()))
-}
+
 
 
 export const toutiao_search_pic =({term="风景",page=0,size=30}) =>{
-  const url = "http://107.173.155.239:8001/picSearch"
+  
+  const url = "http://107.173.155.239:8001/image_toutaio"
   return fetch(url,{
     method: "POST",
     headers: {
@@ -132,8 +125,8 @@ export const toutiao_search_pic =({term="风景",page=0,size=30}) =>{
   })
   .then(res => res.json())
   .then((res) =>{
-    return res.map((item:any) =>{
-      console.log(item.img)
+
+    return res.data.map((item:any) =>{
       return {
         id: item.id,
         star: false,
