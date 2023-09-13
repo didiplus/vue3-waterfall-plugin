@@ -4,7 +4,7 @@
  * @Author: Yaowen Liu
  * @Date: 2021-10-14 13:34:56
  * @LastEditors: didiplus 
- * @LastEditTime: 2023-09-13 21:56:38
+ * @LastEditTime: 2023-09-13 22:23:43
  */
 // import type { ViewCard } from '../lib/types/waterfall'
 
@@ -111,7 +111,7 @@ export const getList = ({ page = 1, pageSize = 20 }) => {
 
 export const toutiao_search_pic =({term="风景",page=0,size=30}) =>{
   
-  const url = "http://107.173.155.239:8001/image_toutaio"
+  const url = "https://img.didiplus.one/image_toutaio"
   return fetch(url,{
     method: "POST",
     headers: {
